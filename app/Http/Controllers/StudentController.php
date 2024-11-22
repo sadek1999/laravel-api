@@ -13,6 +13,21 @@ class StudentController extends Controller
     public function index()
     {
         //
+        $data = [
+            'Name' => 'Sadek', // Fixed assignment operator
+            'email' => 'ali@gmail.com', // Fixed email format
+            'age' => 24,
+            'city' => 'Dhaka'
+        ];
+
+        // Insert data into the database
+        $student = Student::create($data);
+
+        // Return a response with the created student data
+        return response()->json([
+            'message' => 'Student created successfully!',
+            'data' => $student
+        ], 201); 
     }
 
     /**
@@ -21,6 +36,7 @@ class StudentController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -29,6 +45,19 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
+
+        $data = [
+            'Name' => $request->input('Name'),
+            'email' => $request->input('email'),
+            'age' => $request->input('age'),
+            'city' => $request->input('city'),
+        ];
+
+        $student=Student::create($data);
+        return response()->json([
+            'message' => 'Student created successfully!',
+            'data' => $student
+        ], 201);
     }
 
     /**

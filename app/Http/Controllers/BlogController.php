@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -29,6 +30,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         //
+       
     }
 
     /**
