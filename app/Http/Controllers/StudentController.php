@@ -21,12 +21,20 @@ class StudentController extends Controller
         //     ->whereIn('city', ['dhaka', 'Chittagong'])
         //     ->first()
         //        ->get()
-        $student = Student::select('name', 'email', 'age', 'city')
-                    ->where('name','like','s%')->get()
-            ;
+        // $student = Student::select('name', 'email', 'age', 'city')
+        //             ->where('email','like','s%')->get()
+        // $student = Student::avg('age')
+        // $youngestAge=Student::min('age');
+        // $youngestStudent=Student::where('age',$youngestAge)->get();
+        // $oldestAge=Student::max('age');
+        // $oldestStudent=Student::where('age',$oldestAge)->get()
+        //     ;
+        // $students = Student::where('name', 'Ali')
+        // ->update(['email' => 'aliUpdate@gmail.com', 'age' => 30]);
 
+        $students=Student::where('id',5)->delete();
 
-        return $student;
+        return $students;
     }
 
     /**
