@@ -12,7 +12,21 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        // $student = Student:: select('age')->orderBy('age')->get()
+        // $student = Student:: select('name','age','id')
+        // ->where('email','samiya1@gmail.com')->get()
+
+        // $student = Student::select('age')->where('age','<=',20)->get()
+        // $student = Student::select('name', 'email', 'age', 'city')
+        //     ->whereIn('city', ['dhaka', 'Chittagong'])
+        //     ->first()
+        //        ->get()
+        $student = Student::select('name', 'email', 'age', 'city')
+                    ->where('name','like','s%')->get()
+            ;
+
+
+        return $student;
     }
 
     /**
@@ -36,7 +50,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return $student;
     }
 
     /**
